@@ -3,8 +3,13 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
 ## Development server
+Run `npm install` to generate the modules and dependencies after cloning the repositorie.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --project first-ex` for a dev server of the first project application.
+Run `ng serve --project second-ex` for a dev server of the second project application.
+Run `ng serve --project third-ex` for a dev server of the third project application.
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
