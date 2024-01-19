@@ -1,0 +1,26 @@
+
+<div [style.font-family]="font" [style.font-size.px]="fontSize" [style.text-align]="textAlign" style="line-height: normal;">Hello {{name}} !</div>
+<br><br>
+<div style="textAlign: center;">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name" (ngModelChange)="updateName($event)">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Font</mat-label>
+    <mat-select [(value)]="font" (selectionChange)="updateFont($event.value)">
+      <mat-option *ngFor="let font of fonts" [value]="font">{{font}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Font Size</mat-label>
+    <input matInput [(ngModel)]="fontSize" (ngModelChange)="updateFontSize($event)">
+  </mat-form-field>
+  <div>
+    <mat-radio-group [(ngModel)]="textAlign" (ngModelChange)="updateTextAlign($event)">
+      <mat-radio-button value="left">Left</mat-radio-button>&nbsp;&nbsp;
+      <mat-radio-button value="center">Center</mat-radio-button>&nbsp;&nbsp;
+      <mat-radio-button value="right">Right</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>

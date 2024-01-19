@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-form-field appearance="outline" style="text-align: center;">
+    <input matInput [(ngModel)]="num1" type="number" placeholder="Number 1">
+  </mat-form-field>
+  <mat-form-field style="width: 2rem;">
+    <mat-select [(ngModel)]="operation" placeholder="" style="text-align: center; width: 2rem">
+      <mat-option value="+" style="text-align: center;">+</mat-option>
+      <mat-option value="-" style="text-align: center;">-</mat-option>
+      <mat-option value="*" style="text-align: center;">*</mat-option>
+      <mat-option value="/" style="text-align: center;">/</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <input matInput [(ngModel)]="num2" type="number" placeholder="Number 2" style="text-align: center;">
+  </mat-form-field>
+  <button mat-stroked-button color="basic" (click)="calculate()" style="height: 3.25rem; top: -0.25em; margin: 0;">Calculate</button>
+</mat-card>
+<br>
+<mat-card>
+  <div align="center">Result: <strong>{{result}}</strong></div>
+</mat-card>
+<br>
+<div>
+  <h2 align="center">History</h2>
+  <mat-card *ngFor="let item of history; let i = index">
+    <p>{{item.time}}: {{num1}} {{item.operation}} {{num2}} = {{item.result}} <button mat-button color="warn" (click)="deleteHistory(i)">Delete</button></p>
+  </mat-card>
+</div>

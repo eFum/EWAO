@@ -3,5 +3,303 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "first-ex": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/first-ex",
+      "sourceRoot": "projects/first-ex/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/first-ex",
+            "index": "projects/first-ex/src/index.html",
+            "main": "projects/first-ex/src/main.ts",
+            "polyfills": "projects/first-ex/src/polyfills.ts",
+            "tsConfig": "projects/first-ex/tsconfig.app.json",
+            "assets": [
+              "projects/first-ex/src/favicon.ico",
+              "projects/first-ex/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/first-ex/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/first-ex/src/environments/environment.ts",
+                  "with": "projects/first-ex/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "first-ex:build:production"
+            },
+            "development": {
+              "browserTarget": "first-ex:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "first-ex:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/first-ex/src/test.ts",
+            "polyfills": "projects/first-ex/src/polyfills.ts",
+            "tsConfig": "projects/first-ex/tsconfig.spec.json",
+            "karmaConfig": "projects/first-ex/karma.conf.js",
+            "assets": [
+              "projects/first-ex/src/favicon.ico",
+              "projects/first-ex/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/first-ex/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "third-ex": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/third-ex",
+      "sourceRoot": "projects/third-ex/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/third-ex",
+            "index": "projects/third-ex/src/index.html",
+            "main": "projects/third-ex/src/main.ts",
+            "polyfills": "projects/third-ex/src/polyfills.ts",
+            "tsConfig": "projects/third-ex/tsconfig.app.json",
+            "assets": [
+              "projects/third-ex/src/favicon.ico",
+              "projects/third-ex/src/assets"
+            ],
+            "styles": [
+              "projects/third-ex/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/third-ex/src/environments/environment.ts",
+                  "with": "projects/third-ex/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "third-ex:build:production"
+            },
+            "development": {
+              "browserTarget": "third-ex:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "third-ex:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/third-ex/src/test.ts",
+            "polyfills": "projects/third-ex/src/polyfills.ts",
+            "tsConfig": "projects/third-ex/tsconfig.spec.json",
+            "karmaConfig": "projects/third-ex/karma.conf.js",
+            "assets": [
+              "projects/third-ex/src/favicon.ico",
+              "projects/third-ex/src/assets"
+            ],
+            "styles": [
+              "projects/third-ex/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "second-ex": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/second-ex",
+      "sourceRoot": "projects/second-ex/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/second-ex",
+            "index": "projects/second-ex/src/index.html",
+            "main": "projects/second-ex/src/main.ts",
+            "polyfills": "projects/second-ex/src/polyfills.ts",
+            "tsConfig": "projects/second-ex/tsconfig.app.json",
+            "assets": [
+              "projects/second-ex/src/favicon.ico",
+              "projects/second-ex/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/second-ex/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/second-ex/src/environments/environment.ts",
+                  "with": "projects/second-ex/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "second-ex:build:production"
+            },
+            "development": {
+              "browserTarget": "second-ex:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "second-ex:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/second-ex/src/test.ts",
+            "polyfills": "projects/second-ex/src/polyfills.ts",
+            "tsConfig": "projects/second-ex/tsconfig.spec.json",
+            "karmaConfig": "projects/second-ex/karma.conf.js",
+            "assets": [
+              "projects/second-ex/src/favicon.ico",
+              "projects/second-ex/src/assets"
+            ],
+            "styles": [
+              "projects/second-ex/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "first-ex"
 }
